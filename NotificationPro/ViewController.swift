@@ -10,16 +10,30 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var outletTextFieldVC: UITextField!
+//    var data = [String : String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+//        data ["keyData"] = outletTextFieldVC.text
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
+    
 
+    @IBAction func buttonVC(_ sender: Any) {
+         NotificationCenter.default.post(name: .key, object: outletTextFieldVC.text)
+//        NotificationCenter.default.post(name: .key, object: nil, userInfo: data)
+        
+//         if let toDetial = storyboard?.instantiateViewController(withIdentifier: "id") as? DetailViewController {
+//            toDetial.outletTextFieldDetail.text = outletTextFieldVC?.text
+//            navigationController?.pushViewController(toDetial, animated: true)
+//        }
+        print(outletTextFieldVC.text!)
+    }
+    
 
 }
 
